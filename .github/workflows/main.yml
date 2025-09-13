@@ -1,0 +1,70 @@
+name: Main
+
+on:
+  push:
+    branches: [main]
+
+env:
+  DOCKER_USER: ${{ github.actor }}
+  PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+  REPO_OWNER: ${{ github.repository_owner }}
+  SSH_HOST: ${{ secrets.VPS_SSH_HOST }}
+  SSH_IP: ${{ secrets.VPS_SSH_IP }}
+  SSH_USER: ${{ secrets.VPS_SSH_USER }}
+  SSH_PASSWORD: ${{ secrets.VPS_SSH_PASSWORD }}
+  SSH_PORT: ${{ secrets.VPS_SSH_PORT }}
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install deps
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install deps
+        run: npm ci
+      - name: Test
+        run: npm run test
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Docker build
+        run: docker build . --tag new-react-front
+      - name: Docker push
+        run: |
+          docker login ghcr.io -u $GITHUB_ACTOR -p $PAT_TOKEN
+          docker tag new-react-front ghcr.io/$REPO_OWNER/new-react-front:latest
+          docker push ghcr.io/$REPO_OWNER/new-react-front:latest
+
+  rollout:
+    name: rollout
+    runs-on: ubuntu-latest
+    needs: [build-and-deploy]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rollout on k8s
+        run: sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_IP -p $SSH_PORT 'sudo kubectl rollout restart deployment new-react-front'
