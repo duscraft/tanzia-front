@@ -1,6 +1,8 @@
+'use client';
+
 import * as React from 'react';
 import { Button as HeadlessButton } from '@headlessui/react'
-import {twMerge} from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
 
 interface ButtonProps {
   label: string;
