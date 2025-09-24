@@ -1,1 +1,7 @@
-export default () => <div>Login</div>;
+const LoginPage =  () => {
+  return (
+    <div>Login</div>
+  );
+}
+
+export default LoginPage;
