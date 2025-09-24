@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@theme {
+    /* Colors */
+    --color-primary-900: #002C43;
+    --color-primary-800: #003C51;
+    --color-primary-700: #015364;
+    --color-primary-600: #015364;
+    --color-primary-500: #038C8C;
+    --color-primary-400: #31BAAE;
+    --color-primary-300: #5BDCC6;
+    --color-primary-200: #94F3DA;
+    --color-primary-100: #C8F9E8;
+    --color-primary-50: #EAFEF1;
+    --color-primary-25: #F5FZF8;
+
+    --color-gray-900: #101828;
+    --color-gray-800: #1d2939;
+    --color-gray-700: #344054;
+    --color-gray-600: #475467;
+    --color-gray-500: #667085;
+    --color-gray-400: #98A2B3;
+    --color-gray-300: #d0d5dd;
+    --color-gray-200: #e4e7ec;
+    --color-gray-100: #f2f4f7;
+    --color-gray-50: #f9fafb;
+    --color-gray-25: #fcfcfd;
+
+    --color-error-900: #7a092b;
+    --color-error-800: #930f2c;
+    --color-error-700: #b7192e;
+    --color-error-600: #db242d;
+    --color-error-500: #ff3932;
+    --color-error-400: #ff7765;
+    --color-error-300: #ff9d83;
+    --color-error-200: #ffc4ad;
+    --color-error-100: #ffe5d6;
+    --color-error-50: #fff4ef;
+    --color-error-25: #fffcfa;
+
+    --color-warning-900: #7a2e0e;
+    --color-warning-800: #93370d;
+    --color-warning-700: #b54708;
+    --color-warning-600: #dc6803;
+    --color-warning-500: #f79009;
+    --color-warning-400: #fdb022;
+    --color-warning-300: #fec84b;
+    --color-warning-200: #fedf89;
+    --color-warning-100: #fef0c7;
+    --color-warning-50: #fffaeb;
+    --color-warning-25: #fffcf5;
+
+    --color-success-900: #145607;
+    --color-success-800: #21680c;
+    --color-success-700: #338213;
+    --color-success-600: #489b1c;
+    --color-success-500: #60b527;
+    --color-success-400: #8fd256;
+    --color-success-300: #b4e87b;
+    --color-success-200: #d6f7a9;
+    --color-success-100: #e6fbc7;
+    --color-success-50: #fffaeb;
+    --color-success-25: #f9ffef;
+
+    --color-purple-900: #141365;
+    --color-purple-800: #21207a;
+    --color-purple-700: #343398;
+    --color-purple-600: #4c4ab6;
+    --color-purple-500: #6866d4;
+    --color-purple-400: #8d8ce5;
+    --color-purple-300: #a8a6f2;
+    --color-purple-200: #c7c6fa;
+    --color-purple-100: #e3e2fc;
+    --color-purple-50: #eafef1;
+    --color-purple-25: #fbfbfe;
+
+    --color-green-900: #00525b;
+    --color-green-800: #016d6e;
+    --color-green-700: #02897d;
+    --color-green-600: #02a486;
+    --color-green-500: #04bf8a;
+    --color-green-400: #39d89c;
+    --color-green-300: #61eba9;
+    --color-green-200: #97f8c0;
+    --color-green-100: #cafbda;
+    --color-green-50: #dfffe3;
+    --color-green-25: #eafeeb;
+
+    --color-blue-900: #024c74;
+    --color-blue-800: #03688c;
+    --color-blue-700: #0691ae;
+    --color-blue-600: #08bed0;
+    --color-blue-500: #0cf2f2;
+    --color-blue-400: #46f7e7;
+    --color-blue-300: #6bfbe2;
+    --color-blue-200: #9dfde4;
+    --color-blue-100: #cefeed;
+    --color-blue-50: #e4fff0;
+    --color-blue-25: #f1fff6;
+
+    --color-light-purple-900: #3e1c96;
+    --color-light-purple-800: #4a1fb8;
+    --color-light-purple-700: #5925dc;
+    --color-light-purple-600: #6938ef;
+    --color-light-purple-500: #7a5af8;
+    --color-light-purple-400: #9b8afb;
+    --color-light-purple-300: #bdb4fe;
+    --color-light-purple-200: #d9d6fe;
+    --color-light-purple-100: #ebe9fe;
+    --color-light-purple-50: #f4f3ff;
+    --color-light-purple-25: #fafaff;
+
+    --color-indigo-900: #000b2a;
+    --color-indigo-800: #001033;
+    --color-indigo-700: #011640;
+    --color-indigo-600: #011e4c;
+    --color-indigo-500: #022859;
+    --color-indigo-400: #29609b;
+    --color-indigo-300: #5494cd;
+    --color-indigo-200: #91c6ee;
+    --color-indigo-100: #c6e4e6;
+    --color-indigo-50: #d5f2fd;
+    --color-indigo-25: #eafafe;
+
+    --color-sky-900: #141365;
+    --color-sky-800: #222a69;
+    --color-sky-700: #364083;
+    --color-sky-600: #4f5a9c;
+    --color-sky-500: #6773b0;
+    --color-sky-400: #939fd3;
+    --color-sky-300: #b1bce9;
+    --color-sky-200: #cfd8f7;
+    --color-sky-100: #e7ebfb;
+    --color-sky-50: #eff0f9;
+    --color-sky-25: #fcfcfd;
+
+    --color-mauve-900: #741067;
+    --color-mauve-800: #8c1b72;
+    --color-mauve-700: #ae2b83;
+    --color-mauve-600: #d03f92;
+    --color-mauve-500: #f257a0;
+    --color-mauve-400: #f780ac;
+    --color-mauve-300: #fb9ab4;
+    --color-mauve-200: #fdbcc7;
+    --color-mauve-100: #fedde0;
+    --color-mauve-50: #fff2f4;
+    --color-mauve-25: #fffafb;
+
+    --color-fuschia-900: #851651;
+    --color-fuschia-800: #9e165f;
+    --color-fuschia-700: #c11574;
+    --color-fuschia-600: #dd2590;
+    --color-fuschia-500: #ee46bc;
+    --color-fuschia-400: #f670c7;
+    --color-fuschia-300: #faa7e0;
+    --color-fuschia-200: #fcceee;
+    --color-fuschia-100: #fce7f6;
+    --color-fuschia-50: #fdf2fa;
+    --color-fuschia-25: #fef6fb;
+
+    --color-orange-900: #7e2410;
+    --color-orange-800: #9c2a10;
+    --color-orange-700: #c4320a;
+    --color-orange-600: #ec4a0a;
+    --color-orange-500: #fb6514;
+    --color-orange-400: #fd853a;
+    --color-orange-300: #feb273;
+    --color-orange-200: #fddcab;
+    --color-orange-100: #ffead5;
+    --color-orange-50: #fff6ed;
+    --color-orange-25: #fffaf5;
+
+    /* Box Shadow */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    --shadow-none: none;
+
+    /* Font Size */
+    --font-size-xs: .75rem;
+    --font-size-sm: .875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+    --font-size-7xl: 4.5rem;
+    --font-size-8xl: 6rem;
+    --font-size-9xl: 8rem;
+
+    /* Line Height */
+    --line-height-xs: 1rem;
+    --line-height-sm: 1.25rem;
+    --line-height-base: 1.5rem;
+    --line-height-lg: 1.75rem;
+    --line-height-xl: 1.75rem;
+    --line-height-2xl: 2rem;
+    --line-height-3xl: 2.25rem;
+    --line-height-4xl: 2.5rem;
+    --line-height-5xl: 3rem;
+    --line-height-6xl: 3.75rem;
+    --line-height-7xl: 4.5rem;
+    --line-height-8xl: 6rem;
+    --line-height-9xl: 8rem;
+
+    /* Font Weight */
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+}
