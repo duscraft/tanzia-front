@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-const LoginLayout = ({
+const AuthLayout = ({
   children
 }: PropsWithChildren) => {
   return (
@@ -13,4 +13,4 @@ const LoginLayout = ({
   )
 }
 
-export default LoginLayout;
+export default AuthLayout;
