@@ -1,12 +1,16 @@
+'use client';
+
 import { Field, Input, Label } from '@headlessui/react'
 import clsx from "clsx";
-import { HTMLInputTypeAttribute } from "react";
+import { HTMLInputTypeAttribute, JSX } from "react";
 
 interface InputTextProps {
   label: string;
   name?: string;
   placeholder?: string;
   type?: HTMLInputTypeAttribute;
+  icon?: JSX.Element;
+  iconAction?: () => void;
 }
 
 const InputText = ({
@@ -14,6 +18,8 @@ const InputText = ({
   name,
   placeholder = 'toto',
   type = 'text',
+  icon,
+  iconAction
 }: InputTextProps) => {
   return (
     <div className="w-full">
@@ -31,10 +37,13 @@ const InputText = ({
         <Label className={clsx('transition-all duration-250 peer-focus:text-xxs peer-focus:top-1',
           'peer-placeholder-shown:top-3 peer-placeholder-shown:text-base',
           'text-xxs top-1 absolute left-3',
-          'data-focus:top-0 text-indigo-400/75')}
+          'data-focus:top-0 text-gray-600/50')}
         >
           {label}
         </Label>
+        <div onClick={iconAction} className="cursor-pointer absolute right-3 top-1/2 transform -translate-y-1/2">
+          {icon}
+        </div>
       </Field>
     </div>
   )

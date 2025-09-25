@@ -4,8 +4,11 @@ import { Link } from "@/ui-library/Typos/Link";
 import { InputText } from "@/ui-library/InputText/InputText";
 import { Button } from "@/ui-library/Button/Button";
 import { Checkbox } from "@/ui-library/Checkbox/Checkbox";
+import { PasswordField } from "@/components/PasswordField";
 
 const LoginPage = () => {
+
+
   return (
     <div className="flex flex-col gap-6 items-center justify-center h-full px-12 md-p-32 xl:p-64 bg-light-purple-50">
       <H3>(Re) Bonjour!</H3>
@@ -14,7 +17,7 @@ const LoginPage = () => {
       </div>
       <div className="w-full flex flex-col gap-4">
         <InputText type="email" name="email" label="Email" />
-        <InputText type="password" name="password"  label="Mot de passe" />
+        <PasswordField />
         <div className="w-full flex items-center justify-between gap-2">
           <Checkbox label="Se souvenir de moi" />
           <div className="text-right"><Link href="/auth/forgot-password">Problème de connexion ?</Link></div>

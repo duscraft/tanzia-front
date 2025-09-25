@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { fn } from 'storybook/test';
 
 import { InputText } from "@/ui-library/InputText/InputText";
+import { EyeIcon } from "@/ui-library/icons/EyeIcon";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -29,5 +30,12 @@ type Story = StoryObj<typeof meta>;
 export const Input: Story = {
   args: {
     label: 'Label'
+  },
+};
+
+export const InputWithIcon: Story = {
+  args: {
+    label: 'Label',
+    icon: <EyeIcon />
   },
 };
