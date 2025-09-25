@@ -13,8 +13,8 @@ const LoginPage = () => {
         <Paragraph>Vous n&lsquo;avez pas encore de compte ? <Link href="/auth/register">Enregistrez-vous ici</Link></Paragraph>
       </div>
       <div className="w-full flex flex-col gap-4">
-        <InputText label="Email" />
-        <InputText label="Mot de passe" />
+        <InputText type="email" name="email" label="Email" />
+        <InputText type="password" name="password"  label="Mot de passe" />
         <div className="w-full flex items-center justify-between gap-2">
           <Checkbox label="Se souvenir de moi" />
           <div className="text-right"><Link href="/auth/forgot-password">Problème de connexion ?</Link></div>
