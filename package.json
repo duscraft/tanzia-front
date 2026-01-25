@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.8",
-    "next": "15.5.3",
+    "next": "^15.5.9",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "tailwind-merge": "^3.3.1"
@@ -32,7 +32,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9.35.0",
-    "eslint-config-next": "^15.5.4",
+    "eslint-config-next": "^15.5.9",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-storybook": "^9.1.6",
     "globals": "^16.4.0",
